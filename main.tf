@@ -23,6 +23,10 @@ resource "azurerm_subnet" "subnet" {
   enforce_private_link_endpoint_network_policies = true
 }
 
+terraform {
+  experiments = [module_variable_optional_attrs]
+}
+
 resource "azurerm_network_interface" "vm_nic" {
   for_each            = { for vm in var.vms_configuration : vm.name => vm }
   name                = "${each.key}-${random_string.server_suffix[each.key].id}-nic"
