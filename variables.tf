@@ -22,3 +22,13 @@ variable "nic_name" {
   type        = string
   description = "name of the azurerm_network_interface"
 }
+
+variable "address_space" {
+  type        = list(string)
+  description = "name of the address_space"
+}
+
+variable "address_prefixes" {
+  type        = list(string)
+  description = "name of the address_prefixes"
+}
