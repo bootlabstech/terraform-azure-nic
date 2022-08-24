@@ -29,7 +29,7 @@ variable "vnet_name" {
 variable "vm_nic_name" {
   description = "Name of the vm_nic"
   type        = string
-
+}
 #
 # variable address_prefix {
 #   description = "Address prefix of the vnet"
