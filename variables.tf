@@ -32,3 +32,8 @@ variable "address_prefixes" {
   type        = list(string)
   description = "name of the address_prefixes"
 }
+
+variable "nsg_name" {
+  type        = string
+  description = "azurerm_network_security_group"
+}
