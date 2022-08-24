@@ -13,11 +13,6 @@ variable "vnet_name" {
   description = "name of the azurerm_virtual_network"
 }
 
-variable "subnet_name" {
-  type        = string
-  description = "name of the azurerm_subnet"
-}
-
 variable "nic_name" {
   type        = string
   description = "name of the azurerm_network_interface"
@@ -26,11 +21,6 @@ variable "nic_name" {
 variable "address_space" {
   type        = list(string)
   description = "name of the address_space"
-}
-
-variable "address_prefixes" {
-  type        = list(string)
-  description = "name of the address_prefixes"
 }
 
 variable "nsg_name" {
