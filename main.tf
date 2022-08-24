@@ -29,7 +29,7 @@ terraform {
 
 resource "azurerm_network_interface" "vm_nic" {
   for_each            = { for vm in var.vms_configuration : vm.name => vm }
-  name                = "${each.key}-${random_string.server_suffix[each.key].id}-nic"
+  name                = var.vm_nic_name
   location            = var.location
   resource_group_name = var.resource_group_name
 
@@ -37,7 +37,6 @@ resource "azurerm_network_interface" "vm_nic" {
     name                          = "ipconfiguration1"
     subnet_id                     = each.value.subnet_id
     private_ip_address_allocation = "Dynamic"
-    public_ip_address_id          = each.value.public_ip_enabled ? azurerm_public_ip.vm_public_ip[each.key].id : null
   }
 
   lifecycle {
