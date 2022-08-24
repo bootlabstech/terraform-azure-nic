@@ -1,9 +1,11 @@
-output "vnet_id" {
-  description = "Generated VNET ID"
-  value       = azurerm_virtual_network.vnet.id
+output "azurerm_virtual_network" {
+  value = azurerm_virtual_network.vnet
 }
 
-output "subnet_ids" {
-  description = "Generated subnet IDs map"
-  value       = { for subnet in azurerm_subnet.subnet : subnet.name => subnet.id }
+output "azurerm_subnet" {
+  value = azurerm_subnet.subnet
+}
+
+output "azurerm_network_interface" {
+  value = azurerm_network_interface.nic
 }
