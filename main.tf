@@ -8,7 +8,7 @@ resource "azurerm_virtual_network" "vnet" {
 resource "azurerm_subnet" "example" {
   name                 = var.example_name
   resource_group_name  = var.resource_group_name
-  virtual_network_name = azurerm_virtual_network.example.name
+  virtual_network_name = azurerm_virtual_network.vnet.name
   address_prefixes     = ["10.0.2.0/24"]
 }
 
