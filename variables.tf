@@ -27,3 +27,8 @@ variable "nsg_name" {
   type        = string
   description = "azurerm_network_security_group"
 }
+
+variable "example_name" {
+  type        = string
+  description = "azurerm_subnet"
+}
