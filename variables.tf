@@ -8,27 +8,43 @@ variable "location" {
   description = "location of the resource group"
 }
 
-variable "vnet_name" {
-  type        = string
-  description = "name of the azurerm_virtual_network"
-}
-
 variable "nic_name" {
   type        = string
   description = "name of the azurerm_network_interface"
 }
 
-variable "address_space" {
-  type        = list(string)
-  description = "name of the address_space"
+variable "security_group_name" {
+  type        = string
+  description = "The name of security_group"
 }
 
-variable "nsg_name" {
+variable "ip_configuration_name" {
   type        = string
-  description = "azurerm_network_security_group"
+  description = "A name used for this IP Configuration."
 }
 
-variable "example_name" {
+variable "private_ip_address_allocation" {
   type        = string
-  description = "azurerm_subnet"
+  description = "The allocation method used for the Private IP Address. Possible values are Dynamic and Static."
+}
+
+variable "subnet_name" {
+  type        = string
+  description = "The name of subnet"
+}
+
+variable "virtual_network_name" {
+  type        = string
+  description = "The name of virtual network"
+}
+
+variable "subnet_resource_group_name" {
+  type        = string
+  description = "name of the resource group"
+}
+
+variable "private_ip_address" {
+  type        = string
+  description = "The specific ip user want to defined"
+  default     = ""
 }
